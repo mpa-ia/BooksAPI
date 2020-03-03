@@ -28,4 +28,10 @@ describe('CutText', () => {
         expect(cutText(content, 40)).to.equal(content);
         expect(cutText(content, 11)).to.equal(content);
     });
+    it('should return good cut "content" if proper args', () => {
+        const content = 'Lorem Ipsum dolor sit amet';
+        expect(cutText(content, 14)).to.equal('Lorem Ipsum...');
+        expect(cutText(content, 5)).to.equal('Lorem...');
+        expect(cutText(content, 17)).to.equal('Lorem Ipsum dolor...');
+    });
 });
