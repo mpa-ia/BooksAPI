@@ -10,5 +10,10 @@ describe('formatFullname', () => {
         expect(formatFullname([])).to.equal('Error');
         expect(formatFullname(function () {})).to.equal('Error');
     });
-
+    it('should return error if arg is not in <firstName> <lastName> format', () => {
+        expect(formatFullname('AmandaDoe')).to.equal('Error');
+        expect(formatFullname('Amanda')).to.equal('Error');
+        expect(formatFullname('Amanda ')).to.equal('Error');
+        expect(formatFullname('Amanda Aurelia Doe')).to.equal('Error');
+    });
 });
