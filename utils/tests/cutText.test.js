@@ -23,4 +23,9 @@ describe('CutText', () => {
         expect(cutText('Lorem ipsum', 0)).to.equal('Error');
         expect(cutText('Lorem ipsum', -6)).to.equal('Error');
     });
+    it('should return "content" without changes if proper args', () => {
+        const content = 'Lorem Ipsum';
+        expect(cutText(content, 40)).to.equal(content);
+        expect(cutText(content, 11)).to.equal(content);
+    });
 });
